@@ -10,6 +10,12 @@ import {
   LifeBuoy,
   ChevronDown,
 } from "lucide-react";
+import service1 from "@/assets/service1.jpg";
+import service2 from "@/assets/service2.jpg";
+import service3 from "@/assets/service3.jpg";
+import service4 from "@/assets/service4.jpg";
+import service5 from "@/assets/service5.jpg";
+import service6 from "@/assets/service6.jpg";
 
 // Scoped theme for this section — matching the established global palette
 const servicesThemeVars = {
@@ -27,28 +33,28 @@ const services = [
     description: "Product recommendations and technical guidance to help customers select the most suitable materials and packaging solutions.",
     icon: MessageSquare,
     accent: "steel",
-    image: "/src/assets/service1.jpg",
+    image: service1,
   },
   {
     title: "Manufacturing",
     description: "Custom manufacturing of wooden cable drums, steel cable drums, wooden pallets, and industrial timber products built to meet industry standards and project-specific requirements.",
     icon: Hammer,
     accent: "steel",
-    image: "/src/assets/service2.jpg",
+    image: service2,
   },
   {
     title: "Custom Fabrication",
     description: "Tailor-made products manufactured according to your required dimensions, load capacities, materials, and technical specifications.",
     icon: Settings,
     accent: "steel",
-    image: "/src/assets/service3.jpg",
+    image: service3,
   },
   {
     title: "Supply & Distribution",
     description: "Reliable supply of timber, plywood, MDF boards, marine plywood, wire nails, and industrial packaging materials across the UAE and GCC.",
     icon: Truck,
     accent: "timber",
-    image: "/src/assets/service4.jpg",
+    image: service4,
   },
 
   {
@@ -56,7 +62,7 @@ const services = [
     description: "Efficient order management, packaging, and transportation to ensure safe and on-time delivery across the GCC.",
     icon: Package,
     accent: "timber",
-    image: "/src/assets/service5.jpg",
+    image: service5,
   },
 
   {
@@ -64,7 +70,7 @@ const services = [
     description: "Responsive customer assistance and long-term support to ensure continued satisfaction after project completion.",
     icon: LifeBuoy,
     accent: "timber",
-    image: "/src/assets/service6.jpg",
+    image: service6,
   },
 ];
 
