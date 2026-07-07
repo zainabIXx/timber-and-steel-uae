@@ -83,7 +83,7 @@ function Index() {
       {/* PERSISTENT TOP NAVBAR - Full width, glass effect */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-[2px] backdrop-saturate-150 animate-in fade-in slide-in-from-top-4 duration-700">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
-          {/* Logo + Wordmark - pinned to the extreme left */}
+          {/* Logo - pinned to the extreme left */}
           <a
             href="#top"
             onClick={(e) => {
@@ -94,12 +94,6 @@ function Index() {
             className="flex items-center gap-3"
           >
             <img src={mainLogo} alt="TSC" className="h-9 w-auto mix-blend-difference" />
-            <span
-              className="text-[11px] uppercase tracking-[0.3em] whitespace-nowrap mix-blend-difference text-[color:var(--beige)]"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              Timber &amp; Steel Corner
-            </span>
           </a>
 
           {/* Horizontal Nav Links - pinned to the extreme right */}
