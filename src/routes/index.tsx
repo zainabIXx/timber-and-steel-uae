@@ -93,7 +93,7 @@ function Index() {
             }}
             className="flex items-center gap-3"
           >
-            <img src={mainLogo} alt="TSC" className="h-9 w-auto mix-blend-difference" />
+            <img src={mainLogo} alt="TSC" className="h-16 -my-3 md:h-24 md:-my-5 w-auto mix-blend-difference" />
           </a>
 
           {/* Horizontal Nav Links - pinned to the extreme right */}
@@ -148,9 +148,8 @@ function Index() {
 
         {/* STATS ROW - centered along the bottom of the hero, sits between the quote link and scroll indicator */}
         <div className="pointer-events-none absolute inset-x-0 bottom-8 z-20 hidden justify-center px-8 md:flex md:bottom-12 animate-in fade-in slide-in-from-bottom-4 duration-700 [animation-delay:900ms] [animation-fill-mode:backwards]">
-          <div className="grid w-full max-w-2xl grid-cols-4 divide-x divide-white/15 text-center">
+          <div className="grid w-full max-w-2xl grid-cols-3 divide-x divide-white/15 text-center">
             {[
-              { value: "2023", label: "Established" },
               { value: "500+", label: "Clients Served" },
               { value: "15+", label: "Countries" },
               { value: "98%", label: "Satisfaction" },
@@ -207,18 +206,18 @@ function Index() {
 
         {/* Main Content - Centered & Refined, nudged up for a less crowded bottom edge */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center z-20 pointer-events-none">
-          <div className="max-w-4xl space-y-5 -translate-y-16 md:-translate-y-20 pointer-events-auto">
+          <div className="max-w-4xl space-y-5 -translate-y-6 md:-translate-y-8 pointer-events-auto">
             <div className="h-[1px] w-12 bg-white/40 mx-auto mb-6 animate-in fade-in zoom-in-50 duration-500 [animation-delay:100ms] [animation-fill-mode:backwards]" />
 
             <h1
-              className="text-4xl md:text-6xl lg:text-7xl text-white font-light leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-1000 [animation-delay:250ms] [animation-fill-mode:backwards]"
+              className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-white font-light leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-1000 [animation-delay:250ms] [animation-fill-mode:backwards]"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
-              Timber <span style={{ color: "var(--beige)" }}>&</span> <br />
-              <span className="italic">Steel Corner</span>
+              Timber <span style={{ color: "var(--beige)" }}>&</span> Steel Corner <br />
+              Industries LLC
             </h1>
 
-            <p className="text-sm md:text-base text-white/60 tracking-[0.15em] uppercase font-light max-w-lg mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 [animation-delay:600ms] [animation-fill-mode:backwards]">
+            <p className="text-sm md:text-base text-[color:var(--beige)] tracking-[0.15em] uppercase font-light max-w-lg mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 [animation-delay:600ms] [animation-fill-mode:backwards]">
               Your trusted partner in Global Commodities Trading and Logistics Solutions
             </p>
 
@@ -229,7 +228,7 @@ function Index() {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className="group flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[color:var(--beige)] hover:opacity-80 transition-colors"
+                className="group flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/80 hover:opacity-80 transition-colors"
               >
                 Get Started <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -240,7 +239,7 @@ function Index() {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className="text-xs uppercase tracking-[0.3em] text-[color:var(--beige)] hover:opacity-80 transition-colors"
+                className="text-xs uppercase tracking-[0.3em] text-white/80 hover:opacity-80 transition-colors"
               >
                 Learn More
               </a>
@@ -273,9 +272,9 @@ function Index() {
           {/* Column 1: Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={mainLogo} alt="Timber and Steel Corner" className="h-10 w-auto object-contain" />
+              <img src={mainLogo} alt="Timber & Steel Corner Industries LLC" className="h-10 w-auto object-contain" />
               <span className="text-[13px] font-semibold uppercase tracking-[0.25em] text-[#cebe9c]">
-                Timber and Steel Corner
+                Timber & Steel Corner Industries LLC
               </span>
             </div>
             <p className="text-xs font-light leading-relaxed text-[#cebe9c]/60 max-w-sm">
@@ -355,7 +354,7 @@ function Index() {
 
         {/* Global Footer Subline */}
         <div className="mx-auto mt-16 flex max-w-7xl flex-col gap-4 border-t border-[#cebe9c]/10 pt-6 text-[9px] uppercase tracking-[0.35em] text-[#cebe9c]/30 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Timber and Steel Corner. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Timber & Steel Corner Industries LLC. All rights reserved.</span>
           <div className="flex gap-8">
             <span className="cursor-pointer hover:text-[#cebe9c] transition-colors duration-200">Privacy Policy</span>
             <span className="cursor-pointer hover:text-[#cebe9c] transition-colors duration-200">Terms of Service</span>
