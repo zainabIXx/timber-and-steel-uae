@@ -82,7 +82,7 @@ function Index() {
     <main id="top" className="relative bg-background antialiased">
       {/* PERSISTENT TOP NAVBAR - Full width, glass effect */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-[2px] backdrop-saturate-150 animate-in fade-in slide-in-from-top-4 duration-700">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-4 sm:px-6 md:px-8">
           {/* Logo - pinned to the extreme left */}
           <a
             href="#top"
@@ -91,14 +91,14 @@ function Index() {
               window.scrollTo({ top: 0, behavior: "smooth" });
               history.replaceState(null, "", "#top");
             }}
-            className="flex items-center gap-3"
+            className="flex shrink-0 items-center gap-3"
           >
-            <img src={mainLogo} alt="TSC" className="h-16 -my-3 md:h-24 md:-my-5 w-auto mix-blend-difference" />
+            <img src={mainLogo} alt="TSC" className="h-9 -my-1 sm:h-12 sm:-my-2 md:h-24 md:-my-5 w-auto mix-blend-difference" />
           </a>
 
-          {/* Horizontal Nav Links - pinned to the extreme right */}
+          {/* Horizontal Nav Links - always visible, scales down on mobile */}
           <nav>
-            <div className="flex items-center gap-8 md:gap-10">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-8 lg:gap-10">
               {navItems.map(({ label, id }) => {
                 const isActive = activeSection === id;
 
@@ -110,7 +110,7 @@ function Index() {
                       e.preventDefault();
                       scrollToSection(id);
                     }}
-                    className={`group relative flex items-center text-[11px] uppercase tracking-[0.3em] transition-all mix-blend-difference ${
+                    className={`group relative flex items-center whitespace-nowrap text-[10px] uppercase tracking-[0.08em] transition-all mix-blend-difference sm:text-[9px] sm:tracking-[0.2em] md:text-[11px] md:tracking-[0.3em] ${
                       isActive
                         ? "text-[color:var(--olive)]"
                         : "text-[color:var(--beige)] hover:text-[color:var(--olive)]"
