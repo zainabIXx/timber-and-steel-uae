@@ -167,10 +167,25 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
 
 function ServiceItem({ service, isFirst }: { service: (typeof services)[number]; isFirst: boolean }) {
   const Icon = service.icon;
+  // Hover works for mouse users, but touch devices have no real hover state —
+  // so tapping needs its own toggle for mobile.
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={`group py-10 ${isFirst ? "pt-0" : ""}`}>
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-10">
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((prev) => !prev)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setIsOpen((prev) => !prev);
+          }
+        }}
+        className="flex cursor-pointer select-none flex-col gap-4 outline-none md:flex-row md:items-center md:gap-10"
+      >
         {/* Logo/icon + title — same line */}
         <div className="flex items-center gap-4 md:w-72 md:shrink-0">
           <Icon className="h-5 w-5 shrink-0 text-[color:var(--walnut)]" strokeWidth={1.2} />
@@ -186,13 +201,19 @@ function ServiceItem({ service, isFirst }: { service: (typeof services)[number];
         </p>
 
         <ChevronDown
-          className="h-4 w-4 shrink-0 self-end text-[color:var(--walnut)] transition-transform duration-500 group-hover:rotate-180 md:self-center"
+          className={`h-4 w-4 shrink-0 self-end text-[color:var(--walnut)] transition-transform duration-500 group-hover:rotate-180 md:self-center ${
+            isOpen ? "rotate-180" : ""
+          }`}
           strokeWidth={1.5}
         />
       </div>
 
-      {/* Drop-down picture — reveals on hover */}
-      <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:mt-8 group-hover:grid-rows-[1fr] group-hover:opacity-100">
+      {/* Drop-down picture — reveals on hover (desktop) or tap (mobile) */}
+      <div
+        className={`grid transition-all duration-500 ease-out group-hover:mt-8 group-hover:grid-rows-[1fr] group-hover:opacity-100 ${
+          isOpen ? "mt-8 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
         <div className="overflow-hidden rounded-lg">
           <img
             src={service.image}
