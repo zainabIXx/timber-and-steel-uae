@@ -138,7 +138,16 @@ function Reveal({
   );
 }
 
-function HorizontalImages({ images }: { images: string[] }) {
+// `priority` marks the first (above-the-fold) row so its images load
+// immediately and with high fetch priority. Every other row lazy-loads,
+// deferring the network request until it's near the viewport.
+function HorizontalImages({
+  images,
+  priority = false,
+}: {
+  images: string[];
+  priority?: boolean;
+}) {
   return (
     <div className="grid grid-cols-3 gap-2.5 md:gap-3 w-full">
       {images.map((src, i) => (
@@ -150,8 +159,12 @@ function HorizontalImages({ images }: { images: string[] }) {
           <img
             src={src}
             alt=""
+            width={480}
+            height={480}
             className="h-full w-full object-cover object-center"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            fetchPriority={priority ? "high" : "auto"}
           />
         </div>
       ))}
@@ -190,7 +203,7 @@ export function ProductLine() {
                   <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
                     {/* Image Side */}
                     <div className={`w-full ${isImageLeft ? "md:order-1" : "md:order-2"}`}>
-                      <HorizontalImages images={cat.images} />
+                      <HorizontalImages images={cat.images} priority={i === 0} />
                     </div>
 
                     {/* Text Side */}
