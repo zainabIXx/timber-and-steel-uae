@@ -72,9 +72,9 @@ function Reveal({
 
 const partners = [
   { src: logo1, name: "One Globe Trading FZE" },
-  { src: logo2, name: "Highland Trading FZE LLC" },
-  { src: logo3, name: "SAT" },
   { src: logo4, name: "Zahra Steel" },
+  { src: logo2, name: "Highland Trading FZE LLC" },
+  
 ];
 
 export function Partners() {
@@ -100,7 +100,7 @@ export function Partners() {
         </Reveal>
 
         {/* Logo grid — each tile staggers in on its own delay, and scales cleanly on hover */}
-        <div className="grid grid-cols-2 gap-12 sm:grid-cols-4 md:gap-20">
+        <div className="flex flex-wrap justify-center gap-34 md:gap-44">
           {partners.map((partner, i) => (
             <Reveal key={partner.name} delayMs={i * 120} className="group flex flex-col items-center justify-center gap-5">
               <div className="flex h-20 w-full items-center justify-center md:h-24">
