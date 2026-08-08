@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import laser1 from "@/assets/laser1.png";
+import laser2 from "@/assets/laser2.png";
+import laser3 from "@/assets/laser3.png";
 import p1a from "@/assets/p1a.png";
 import p1b from "@/assets/p1b.png";
 import p1c from "@/assets/p1c.png";
@@ -24,6 +27,14 @@ import p7c from "@/assets/p7c.png";
 const categories = [
   {
     num: "01",
+    title: "Laser Cut Steel Components",
+    description:
+      "Precision CNC laser cutting in mild steel, stainless steel, and aluminum — clean edges, tight tolerances, and minimal material waste. From one-off prototypes to high-volume runs, for construction, engineering, and industrial manufacturing.",
+    tags: ["Mild Steel", "Stainless Steel", "Aluminum", "Custom Fabrication"],
+    images: [laser1, laser2, laser3],
+  },
+  {
+    num: "02",
     title: "Wooden Cable Drums",
     description:
       "High-quality wooden cable drums engineered for the safe storage, transportation, and handling of electrical, telecommunication, fiber optic, and industrial cables. Built from premium-grade timber for exceptional strength and durability, in standard and custom sizes.",
@@ -36,7 +47,7 @@ const categories = [
     images: [p1a, p1b, p1c],
   },
   {
-    num: "02",
+    num: "03",
     title: "Steel Cable Drums",
     description:
       "Engineered for the safe storage, winding, and transportation of heavy-duty power, telecommunications, and industrial cables. Manufactured from high-quality steel for superior strength and a long service life, available in standard and custom sizes.",
@@ -44,7 +55,7 @@ const categories = [
     images: [p2a, p2b, p2c],
   },
   {
-    num: "03",
+    num: "04",
     title: "Wooden Pallets",
     description:
       "Durable softwood and hardwood pallets built for strength, stability, and long service life in demanding industrial environments. Standard and custom sizes available, with ISPM 15 heat-treated options for international shipping compliance.",
@@ -52,7 +63,7 @@ const categories = [
     images: [p3a, p3b, p3c],
   },
   {
-    num: "04",
+    num: "05",
     title: "Commercial Plywood",
     description:
       "High-quality plywood in multiple thicknesses — 9mm, 12mm, 18mm and more — offered in single press (MR grade) for interior furniture and joinery, and double press (BWR/BWP grade) for kitchens, wardrobes, and semi-exterior use.",
@@ -60,7 +71,7 @@ const categories = [
     images: [p4a, p4b, p4c],
   },
   {
-    num: "05",
+    num: "06",
     title: "Marine Plywood & MDF Boards",
     description:
       "Marine plywood with strong waterproof BWP-grade bonding for kitchens, bathrooms, and marine or high-humidity applications. MDF boards offer a smooth, uniform surface for furniture, decorative panels, and interior fit-outs.",
@@ -68,7 +79,7 @@ const categories = [
     images: [p5a, p5b, p5c],
   },
   {
-    num: "06",
+    num: "07",
     title: "Timber",
     description:
       "Pine, hardwood, and softwood timber for construction, manufacturing, and industrial use — from lightweight, workable pine to dense, wear-resistant hardwood and cost-effective softwood for framing and formwork.",
@@ -76,7 +87,7 @@ const categories = [
     images: [p6a, p6b, p6c],
   },
   {
-    num: "07",
+    num: "08",
     title: "Wire Nails",
     description:
       "High-quality steel wire nails for construction, woodworking, carpentry, and packaging — offering excellent grip, durability, and bend resistance. Available in multiple sizes and finishes for industrial and commercial use.",
