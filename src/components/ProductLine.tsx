@@ -27,7 +27,7 @@ import p7c from "@/assets/p7c.png";
 const categories = [
   {
     num: "01",
-    title: "Laser Cut Steel Components",
+    title: "Custom Laser Cut Steel",
     description:
       "Precision CNC laser cutting in mild steel, stainless steel, and aluminum — clean edges, tight tolerances, and minimal material waste. From one-off prototypes to high-volume runs, for construction, engineering, and industrial manufacturing.",
     tags: ["Mild Steel", "Stainless Steel", "Aluminum", "Custom Fabrication"],
